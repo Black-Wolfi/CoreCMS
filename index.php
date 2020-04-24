@@ -2,20 +2,11 @@
 
 require __DIR__.'/App/autoload.php';
 
- $uri = $_SERVER['REQUEST_URI'];
+$uri = $_SERVER['REQUEST_URI'];
 
+$Rout = \App\RoutController::RouteUrl($uri);
 
-if ('/' == $uri){
-    $ctrl =  'IndexController';
-}
-else {
-    $parts = explode('/', $uri);
-    $ctrl = $parts[1] ? ucfirst($parts[1]) : 'IndexController';
-}
-
- $class = '\App\Controller\\'. $ctrl ;
-
-$ctrl = new $class;
+$ctrl = new $Rout;
 
 //$ctrl = new \App\Controller\IndexController();
 // Запуск  и метрод  Через метож hendl через __invoke

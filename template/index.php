@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -20,10 +20,10 @@
                             <rect fill="#55595c" width="100%" height="100%"></rect><text fill="#eceeef" dy=".3em" x="50%" y="50%">Thumbnail</text>
                         </svg>
                         <div class="card-body">
-                            <p class="card-text"><?= $article->content ?></p>
+                            <p class="card-text"><?= mb_strimwidth($article->content, 0, 200, '...') ?></p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <a class="btn btn-sm btn-outline-secondary" href="/ArticleController/?id=<?= $article->id ?>">Ccылка</a>
+                                    <a class="btn btn-sm btn-outline-secondary" href="/ArticleController/?=<?= $article->url ?>">Ccылка</a>
                                     <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
                                 </div>
                                 <small class="text-muted">9 mins</small>

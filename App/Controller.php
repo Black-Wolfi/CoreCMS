@@ -26,4 +26,11 @@ abstract class Controller
         }
     }
     abstract protected function handle();
+
+    protected function strimwidth($data)
+    {
+        $data = mb_strimwidth($data, 0, 10, "...");
+
+        return $data;
+    }
 }

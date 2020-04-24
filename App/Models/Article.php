@@ -11,6 +11,7 @@ class Article  extends Model implements ContentInerface
     public $title;
     public $content;
     public $status;
+    public $url;
 
     public function __construct()
     {
